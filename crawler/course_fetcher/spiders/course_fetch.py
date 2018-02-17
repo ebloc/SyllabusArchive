@@ -16,7 +16,7 @@ class CourseFetchSpider(scrapy.Spider):
                 yield scrapy.Request(url, self.gotoDepartment)
 
     def gotoDepartment(self, response):
-        for courseCode in response.xpath('//p/strong/text()').re(r'(^[A-Z]+ \d{3})'):
-            self.file.write(courseCode)
+        for courseCode in response.xpath('//p/strong/text()').re(r'(^[A-Z]+ \d{3} .+\()'):
+            self.file.write(courseCode[:-1])
     
     
