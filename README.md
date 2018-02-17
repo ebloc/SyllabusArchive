@@ -9,6 +9,7 @@ We are working on the development branch, for every feature that you are going t
 - pull the development branch: ```git pull origin development``` and create a feature branch from development: ```git checkout -b featureName development``` 
 - implement the feature in your feature branch and after everything is done commit your changes, **to avoid merge conflicts do the following:** checkout to the development: ```git checkout development```, pull up-to-date development code: ```git pull origin development``` , checkout to your feature branch: ```git checkout featureName```, merge development to your feature branch with --no-ff flag: ```git merge --no-ff development```, ***if there is any merge conflict solve them manually and commit changes*** and finally push your feature branch to the origin: ```git push origin featureName```
 - create a pull request to the development branch in GitHub.
+- after the pull request is merged, close the issue of the feature by citing the pull request id (like #12)
 
 ## CRAWLER
 
