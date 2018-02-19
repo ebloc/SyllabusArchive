@@ -7,7 +7,6 @@ class CourseFetchSpider(scrapy.Spider):
     name = 'course_fetch'
     allowed_domains = ['boun.edu.tr']
     start_urls = ['http://www.boun.edu.tr/en-US/Content/Academic/Undergraduate_Catalogue']
-    file = open("output.txt", "w")
 
     def parse(self, response):
         for departmentUl in response.css('div.nonaccordion').css('ul'):
