@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 import scrapy
+import re
 
 
 class CourseFetchSpider(scrapy.Spider):
     name = 'course_fetch'
     allowed_domains = ['boun.edu.tr']
     start_urls = ['http://www.boun.edu.tr/en-US/Content/Academic/Undergraduate_Catalogue']
-    file = open("output.txt", "w")
 
     def parse(self, response):
         for departmentUl in response.css('div.nonaccordion').css('ul'):
@@ -16,7 +16,6 @@ class CourseFetchSpider(scrapy.Spider):
                 yield scrapy.Request(url, self.gotoDepartment)
 
     def gotoDepartment(self, response):
-        for courseCode in response.xpath('//p/strong/text()').re(r'(^[A-Z]+ \d{3} .+\()'):
-            self.file.write(courseCode[:-1])
-    
-    
+        for courseInfo in response.xpath('//p/strong/text()').re(r'(^[A-Z]+ \d{3} .+\()'):
+            courseCode = re.findall("^\w+ \d\d\d", courseInfo[:-1])[0]
+            courseName = re.findall("\d .+", courseInfo[:-1])[0][1:]
