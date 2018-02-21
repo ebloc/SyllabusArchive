@@ -28,7 +28,7 @@ class CourseFetchSpider(scrapy.Spider):
                 return
         except:
             pathSplit = response.url.split('/')
-            path = "syllabi/" + pathSplit[-2] +"_" + pathSplit[-1]
+            path = "../../../syllabi/" + pathSplit[-2] +"_" + pathSplit[-1]
             self.logger.info('Saving PDF %s', path)
             with open(path, 'wb') as f:
                 f.write(response.body)
