@@ -17,4 +17,6 @@ We are working on the development branch, for every feature that you are going t
 
 ```cd crawler/course_fetcher/spiders```
 
-```scrapy runspider course_fetch.py```
+You should add the semester as an argument
+
+```scrapy runspider course_fetch.py -a semester='2017-2018-2'```

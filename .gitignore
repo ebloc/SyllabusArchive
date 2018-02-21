@@ -107,4 +107,9 @@ venv.bak/
 # PyCharm
 .idea/
 
+.DS_Store
+*.DS_Store
+
+crawler/course_fetcher/spiders/output.txt
+ipfs/syllabi/
 .vscode/
