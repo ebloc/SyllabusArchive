@@ -112,3 +112,4 @@ venv.bak/
 
 crawler/course_fetcher/spiders/output.txt
 ipfs/syllabi/
+.vscode/
