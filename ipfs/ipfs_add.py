@@ -6,13 +6,13 @@ import json
 from itertools import groupby
 from operator import itemgetter
 
+sylabi_dir = '../syllabi'
 
-if not os.path.exists("../syllabi"):
-    print("\t\n ERROR ! Course pdfs should be included in this directory with name 'syllabi' ! \n")
+if not os.path.exists(sylabi_dir):
+    print("\t\n ERROR ! Course PDFs should be included in root directory with name 'syllabi' ! \n")
     exit(1)
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
-sylabi_dir = '../syllabi'
 grouped_json_file = '../grouped_courses.json'
 raw_json_file = '../raw_courses.json'
 
@@ -42,11 +42,11 @@ for ind, pdf in enumerate(os.listdir(sylabi_dir), 1):
     course_name = pdf_file.name.split('_')
 
     course = {}
-    course['name']       = course_name[2].split('.pdf')[0].strip()
-    course['code']       = course_name[1][-3:]
-    course['department']        = course_name[1][:4]
-    course['semester']          = course_name[0].split('/')[-1]
-    course['ipfs_hash']         = ipfs_hash
+    course['name']        = course_name[2].split('.pdf')[0].strip()
+    course['code']        = course_name[1][-3:]
+    course['department']  = course_name[1][:4]
+    course['semester']    = course_name[0].split('/')[-1]
+    course['ipfs_hash']   = ipfs_hash
 
     courses.append(course)
 
