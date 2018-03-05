@@ -90,6 +90,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+bin/
+pip-selfcheck.json
+pyvenv.cfg
 
 # Spyder project settings
 .spyderproject
@@ -111,5 +114,5 @@ venv.bak/
 *.DS_Store
 
 crawler/course_fetcher/spiders/output.txt
-ipfs/syllabi/
+syllabi/*.pdf
 .vscode/
