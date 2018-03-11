@@ -20,3 +20,17 @@ We are working on the development branch, for every feature that you are going t
 You should add the semester as an argument
 
 ```scrapy runspider course_fetch.py -a semester='2017-2018-2'```
+
+## FileManager 
+
+- Open up remix.ethereum.org
+
+- Copy and paste the code in fileManager.sol
+
+- Compile and run the program
+
+- At right side console, fill setFile arguments as "fileName","Hash_From_İpfs"
+
+- To get file hash, fill getFileHash argument as "fileName" and it returns the hash of it
+
+- To get file uploader, fill getFileIssuer argument as "fileName" and it returns address of file Issuer
