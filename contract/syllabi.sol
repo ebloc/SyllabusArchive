@@ -35,21 +35,21 @@ contract Syllabi {
     function addUniversity(string _name) external {
         uniGlobal.name = _name;
         uint id = universities.push(uniGlobal);
-        uniNameToId[_name] = id;
+        uniNameToId[_name] = id - 1;
     }
 
     function addSemester(string _uniName, string _semesterName) external {
         University storage uni = universities[uniNameToId[_uniName]];
         semesterGlobal.name = _semesterName;
         uint id = uni.semesters.push(semesterGlobal);
-        uni.semesterNameToId[_semesterName] = id;
+        uni.semesterNameToId[_semesterName] = id - 1;
     }
 
     function addDepartment(string _uniName, string _semesterName, string _departmentName) external {
         University storage uni = universities[uniNameToId[_uniName]];
         departmentGlobal.name = _departmentName;
         uint id = uni.semesters[uni.semesterNameToId[_semesterName]].departments.push(departmentGlobal);
-        uni.semesters[uni.semesterNameToId[_semesterName]].departmentNameToId[_departmentName] = id;
+        uni.semesters[uni.semesterNameToId[_semesterName]].departmentNameToId[_departmentName] = id - 1;
     }
 
     function addCourse(string _uniName, string _semesterName, string _departmentName, string _courseName, bytes32 _hash) external {
@@ -59,6 +59,6 @@ contract Syllabi {
         courseGlobal.name = _courseName;
         courseGlobal.fileHash = _hash;
         uint id = department.courses.push(courseGlobal);
-        department.courseNameToId[_courseName] = id;
+        department.courseNameToId[_courseName] = id - 1;
     }
 }
