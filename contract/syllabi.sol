@@ -29,7 +29,7 @@ contract Syllabi {
 
     struct Course {
         string name;
-        bytes32 fileHash;
+        string fileHash;
     }
 
     function addUniversity(string _name) external {
@@ -52,7 +52,7 @@ contract Syllabi {
         uni.semesters[uni.semesterNameToId[_semesterName]].departmentNameToId[_departmentName] = id - 1;
     }
 
-    function addCourse(string _uniName, string _semesterName, string _departmentName, string _courseName, bytes32 _hash) external {
+    function addCourse(string _uniName, string _semesterName, string _departmentName, string _courseName, string _hash) external {
         University storage uni = universities[uniNameToId[_uniName]];
         Semester storage semester = uni.semesters[uni.semesterNameToId[_semesterName]];
         Department storage department = semester.departments[semester.departmentNameToId[_departmentName]];
@@ -60,5 +60,16 @@ contract Syllabi {
         courseGlobal.fileHash = _hash;
         uint id = department.courses.push(courseGlobal);
         department.courseNameToId[_courseName] = id - 1;
+    }
+
+    function getUniversities(string _uniName) external view returns (string){
+        return universities[uniNameToId[_uniName]].name;
+    }
+    
+    function getHash(string _uniName, string _semesterName, string _departmentName, string _courseName) external view returns (string) {
+        University storage uni = universities[uniNameToId[_uniName]];
+        Semester storage semester = uni.semesters[uni.semesterNameToId[_semesterName]];
+        Department storage department = semester.departments[semester.departmentNameToId[_departmentName]];
+        return department.courses[department.courseNameToId[_courseName]].fileHash;
     }
 }
