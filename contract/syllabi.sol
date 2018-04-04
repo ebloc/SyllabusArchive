@@ -29,7 +29,26 @@ contract Syllabi {
 
     struct Course {
         string name;
-        string fileHash;
+        string syllabusHash;
+        address instructor;
+        address[] students;
+        address[] graduates;
+    }
+    
+    function addStudentToCourse(address _student,string _uniName, string _semesterName, string _departmentName, string _courseName) external{
+        University storage uni = universities[uniNameToId[_uniName]];
+        Semester storage semester = uni.semesters[uni.semesterNameToId[_semesterName]];
+        Department storage department = semester.departments[semester.departmentNameToId[_departmentName]];
+        department.courses[department.courseNameToId[_courseName]].students.push(_student);
+    }
+    
+    function verifyThatStudentGraduatedFromCourse(address _student,string _uniName, string _semesterName, string _departmentName, string _courseName) external{
+        University storage uni = universities[uniNameToId[_uniName]];
+        Semester storage semester = uni.semesters[uni.semesterNameToId[_semesterName]];
+        Department storage department = semester.departments[semester.departmentNameToId[_departmentName]];
+        if(department.courses[department.courseNameToId[_courseName]].instructor == msg.sender){
+            department.courses[department.courseNameToId[_courseName]].graduates.push(_student);
+        }
     }
 
     function addUniversity(string _name) external {
@@ -57,19 +76,26 @@ contract Syllabi {
         Semester storage semester = uni.semesters[uni.semesterNameToId[_semesterName]];
         Department storage department = semester.departments[semester.departmentNameToId[_departmentName]];
         courseGlobal.name = _courseName;
-        courseGlobal.fileHash = _hash;
+        courseGlobal.syllabusHash = _hash;
         uint id = department.courses.push(courseGlobal);
         department.courseNameToId[_courseName] = id - 1;
     }
 
-    function getUniversities(string _uniName) external view returns (string){
+    function getUniversity(string _uniName) external view returns (string){
         return universities[uniNameToId[_uniName]].name;
     }
     
-    function getHash(string _uniName, string _semesterName, string _departmentName, string _courseName) external view returns (string) {
+    function getDepartment(string _uniName, string _semesterName, string _departmentName) external view returns(string){
         University storage uni = universities[uniNameToId[_uniName]];
         Semester storage semester = uni.semesters[uni.semesterNameToId[_semesterName]];
         Department storage department = semester.departments[semester.departmentNameToId[_departmentName]];
-        return department.courses[department.courseNameToId[_courseName]].fileHash;
+        return department.name;
+    }
+    
+    function getSyllabusHash(string _uniName, string _semesterName, string _departmentName, string _courseName) external view returns (string) {
+        University storage uni = universities[uniNameToId[_uniName]];
+        Semester storage semester = uni.semesters[uni.semesterNameToId[_semesterName]];
+        Department storage department = semester.departments[semester.departmentNameToId[_departmentName]];
+        return department.courses[department.courseNameToId[_courseName]].syllabusHash;
     }
 }
