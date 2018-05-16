@@ -39,6 +39,8 @@ for ind, pdf in enumerate(os.listdir(sylabi_dir), 1):
     ipfs_add_res = ipfs.add(pdf_file)
     ipfs_hash = ipfs_add_res['Hash']
 
+    if('.gitignore' in pdf_file.name):
+        continue
     course_name = pdf_file.name.split('_')
 
     course = {}
