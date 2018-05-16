@@ -1,796 +1,425 @@
 {
-  "2017-2018-1": {
-    "CHEM": [
-      {
-        "code": "435",
-        "department": "CHEM",
-        "ipfs_hash": "QmaRHT3VFuQ42tBpb8pkrjHzEd5Qf6fFtZcNAzp1UGtgiR",
-        "name": "Introduction to Polymer Science and Technology",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "353",
-        "department": "CHEM",
-        "ipfs_hash": "QmdKxmysLwEneF6AjxoNADxReYiZAjVZod5uAkBYrwHt7X",
-        "name": "Introduction to Physical Chemistry",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "413",
-        "department": "CHEM",
-        "ipfs_hash": "QmPRNcgcZHREoVUrCsG7n8AUeZVaAYsM1VV6NJzsPyMeQu",
-        "name": "Medicinal Chemistry",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "415",
-        "department": "CHEM",
-        "ipfs_hash": "QmUFTxoDTD4EzcAdrdCK5cqA76szsdtzc4CGECGP6d6pFu",
-        "name": "General Biochemistry",
-        "semester": "2017-2018-1"
-      }
-    ],
-    "CMPE": [
-      {
-        "code": "475",
-        "department": "CMPE",
-        "ipfs_hash": "QmU2Q7oSreQUM1K1dCmk9QzYrycy5Zh9sNbsZnpNvLshe1",
-        "name": "Computer Networks",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "230",
-        "department": "CMPE",
-        "ipfs_hash": "QmTydonBSMMFMfrMnp9ipMECGUbjwv7T97w1MpY8QsTPF6",
-        "name": "Systems Programming",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "343",
-        "department": "CMPE",
-        "ipfs_hash": "QmbKf1xBfkgdFhjv8ePjKtQBFHBrbB7aQG5fyZfHXYYpWG",
-        "name": "Introduction to Probability and Statistics for Computer Engineers",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "478",
-        "department": "CMPE",
-        "ipfs_hash": "QmV5xtSv4xKthGA5Nk6P4UmYQJaDTvNMG63Gmyx5fATSsw",
-        "name": "Parallel Processing",
-        "semester": "2017-2018-1"
-      }
-    ],
-    "ED10": [
-      {
-        "code": "101",
-        "department": "ED10",
-        "ipfs_hash": "QmV7oHcpmHeCNZ9Mqwp8D82YpsDzRo3S5QBuqmrsfL7QKX",
-        "name": "Introduction to Education",
-        "semester": "2017-2018-1"
-      }
-    ],
-    "ENGL": [
-      {
-        "code": "111",
-        "department": "ENGL",
-        "ipfs_hash": "QmRRtpu7iAb3LSwm5hcE81beVknVzdeqUgDJVRUJzddH3b",
-        "name": "Expository Writing I",
-        "semester": "2017-2018-1"
-      }
-    ],
-    "FLED": [
-      {
-        "code": "411",
-        "department": "FLED",
-        "ipfs_hash": "QmfKvkEZL8sm2GuKuzxQW4RSoXeS2hoHpY28pZHWa6Pbtd",
-        "name": "Technology-Enhanced Language Teaching",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "211",
-        "department": "FLED",
-        "ipfs_hash": "QmfULcdkXbq4CF5oDgpQymjsaDKsfY3kZEFNDkaXzmPrzV",
-        "name": "English Language Awareness",
-        "semester": "2017-2018-1"
-      }
-    ],
-    "IE41": [
-      {
-        "code": "413",
-        "department": "IE41",
-        "ipfs_hash": "QmUhTdTiKJJywiMN72vKMSk9LJo89CjrA1Gdyve2MmcGwK",
-        "name": "Supply Chain Management",
-        "semester": "2017-2018-1"
-      }
-    ],
-    "INTT": [
-      {
-        "code": "121",
-        "department": "INTT",
-        "ipfs_hash": "QmZ5gJgoKeWEs3RR8a4ZqHknjPCW8cxB8Ze9X9SuaMQckU",
-        "name": "Business Mathematics I",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "227",
-        "department": "INTT",
-        "ipfs_hash": "QmZoLmGwUYjQahgkhz92zaJ6SbPUtaVUoyc8ax6jWDwieq",
-        "name": "Applied Statistics I",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "413",
-        "department": "INTT",
-        "ipfs_hash": "QmWbWScDxoUBL1c8RNph6qtyAsh7uzQpJVfhjCrgaNNjoT",
-        "name": "International Trade and Economic Development",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "203",
-        "department": "INTT",
-        "ipfs_hash": "QmYMrrgZsDLLqzxNhVtba5SnFBNLkfmodzMMaSyfNEvE7j",
-        "name": "Financial Accounting",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "377",
-        "department": "INTT",
-        "ipfs_hash": "QmbFEckBFisR1rpLXVKrD1y86a346rBzSaPFqxHLfdXPLL",
-        "name": "Introduction to Finance",
-        "semester": "2017-2018-1"
-      }
-    ],
-    "LING": [
-      {
-        "code": "316",
-        "department": "LING",
-        "ipfs_hash": "Qmbf5niwC9TpexgEdjL6UK5NeNFq1wZ4UuwYHPAd5XWhoP",
-        "name": "Brain and Language",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "203",
-        "department": "LING",
-        "ipfs_hash": "QmXbbFgjCULo1tax2xuPsZutH4R8Qe4vz6f4CtGHoiZo9G",
-        "name": "Syntax",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "201",
-        "department": "LING",
-        "ipfs_hash": "QmR91bjSUotubYXSTwtftP8dxGo1z3mfM7435V5ANy9YQj",
-        "name": "Phonology 3+1+0) 3",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "101",
-        "department": "LING",
-        "ipfs_hash": "QmSw93xt3J4anXpGhyzawnsPiTavDtrhWSZ9BwsUPp6DX3",
-        "name": "Introduction to Language and Linguistics I",
-        "semester": "2017-2018-1"
-      }
-    ],
-    "MATH": [
-      {
-        "code": "331",
-        "department": "MATH",
-        "ipfs_hash": "QmQuAonkQSSG6siBkuR5BFvNthmWGuAWf6NF8dBE7HV7Gd",
-        "name": "Metric Spaces",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "323",
-        "department": "MATH",
-        "ipfs_hash": "QmV6XM1K1G2EqtYAeJRzDVXSzyzoAXCNUDmdZbsJsoH6pH",
-        "name": "Rings, Fields and Galois Theory",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "338",
-        "department": "MATH",
-        "ipfs_hash": "QmVHvhDt31FQbvZevzwammTKGYxBxTdDVXj7re6kRsBH1n",
-        "name": "Complex Analysis I",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "474",
-        "department": "MATH",
-        "ipfs_hash": "QmRD3Fo3pZjei3bYdjESXfnN7HsDmvG48fREiXHoStGdPC",
-        "name": "Mathematical Aspects of General Relativity",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "471",
-        "department": "MATH",
-        "ipfs_hash": "QmbkkeK1PMnqs6fVafqpLepyJBXHqhfy7GHMDn59AWuiRn",
-        "name": "Topology",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "222",
-        "department": "MATH",
-        "ipfs_hash": "QmSSaFq7LEvMkn5AzwSGjA8RDuihAioxwLai2Z2EMBMPXg",
-        "name": "Group Theory",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "101",
-        "department": "MATH",
-        "ipfs_hash": "QmPVAjaz7pnjgYygQJjDUqTDb8uA6mmDYiscjpP5rxe2D7",
-        "name": "Calculus I",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "132",
-        "department": "MATH",
-        "ipfs_hash": "QmSPJJRUbMS5DbMfCoL23HTq5DFbRknS5KB6tjkeNirUTF",
-        "name": "Calculus of Several Variables",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "102",
-        "department": "MATH",
-        "ipfs_hash": "QmUqWJaZtTWGL2nBSgguXa3EFdwmUxGJESdyzncAyxdfbC",
-        "name": "Calculus II",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "344",
-        "department": "MATH",
-        "ipfs_hash": "QmRv3cTKsomDPvfzPDViL27uzut7uVcbUPstt2BqS97GSC",
-        "name": "Introduction to Probability and Statistics",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "131",
-        "department": "MATH",
-        "ipfs_hash": "QmXKRB4538GCKTBS7e4vqCpKgvQhZcDneUuUsxXDUSm5KV",
-        "name": "Calculus of a single variable",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "105",
-        "department": "MATH",
-        "ipfs_hash": "QmUnduBhV66iMKnkvRCtrsChULF5Mtdea8awynTnvgiDrZ",
-        "name": "Introduction to Finite Mathematics",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "327",
-        "department": "MATH",
-        "ipfs_hash": "QmabGxALt5HYJxGqctYkNq4REwJaRGtPLfo1uzTYXMhszi",
-        "name": "Number Theory",
-        "semester": "2017-2018-1"
-      }
-    ],
-    "PHIL": [
-      {
-        "code": "273",
-        "department": "PHIL",
-        "ipfs_hash": "Qmcxee4cQe1FffvmCr8bc8RJfUF7vtavQrJU4yECq48bCd",
-        "name": "Epistemology",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "213",
-        "department": "PHIL",
-        "ipfs_hash": "QmeyXwTaZ5qHTXHMP5b3CHGRY4EjfPgwHDpL3JiYcYGv5m",
-        "name": "History of Philosophy I",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "341",
-        "department": "PHIL",
-        "ipfs_hash": "QmRw5LZy1AnMY3E3dNcZXXbG72SxutwocnnZUaP9XDGyg3",
-        "name": "Ethics",
-        "semester": "2017-2018-1"
-      }
-    ],
-    "PHYS": [
-      {
-        "code": "225",
-        "department": "PHYS",
-        "ipfs_hash": "QmQ3Wj3JbjvZjrMcgtzjE3Q7aWkgUSAGBnrgKUTuNns4r4",
-        "name": "Introduction to Earth Science I",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "407",
-        "department": "PHYS",
-        "ipfs_hash": "QmZBGePuSpPagrXS99JvKDAEwtMavehSkef7qPNib1tuhq",
-        "name": "Advanced Quantum Physics I",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "411",
-        "department": "PHYS",
-        "ipfs_hash": "QmZRn5BLG82fJ6c58phwGBWvB6P7A331S1XNgVWstXPEyw",
-        "name": "Quantum Mechanics I",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "121",
-        "department": "PHYS",
-        "ipfs_hash": "QmYb2PcyFQivUWiqyZ63Cq2vSBDssV5yP9pk2Jqtss47Mk",
-        "name": "Introductory Mechanics and Thermodynamics",
-        "semester": "2017-2018-1"
-      }
-    ],
-    "POLS": [
-      {
-        "code": "101",
-        "department": "POLS",
-        "ipfs_hash": "QmcQHnVevrZTpfobcgp3SG2NQZa6EkNbwxrqtvBh4NYdyM",
-        "name": "Introduction to Political Science",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "215",
-        "department": "POLS",
-        "ipfs_hash": "QmbtRAgdFK6iWatZgPqa5JX4TftjZBw9G3zpY7w1boBydy",
-        "name": "Comparative Politics",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "415",
-        "department": "POLS",
-        "ipfs_hash": "QmZ9q5HDncwQT5pMvuGtVoitsf6JSXKKRUrb1Wrcw8xj4V",
-        "name": "Political Psychology",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "373",
-        "department": "POLS",
-        "ipfs_hash": "QmVer18pswyPBQpRD76RSYD834g5eq6ZaAwgotKxYyCgJL",
-        "name": "Politics and Culture",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "305",
-        "department": "POLS",
-        "ipfs_hash": "QmR9U46idm1XBWMCQA5szn4RJjZd8MT36YsTL2HCzb8DXv",
-        "name": "Politics of Nationalism and Ethnicity",
-        "semester": "2017-2018-1"
-      },
-      {
-        "code": "217",
-        "department": "POLS",
-        "ipfs_hash": "QmW6rRQH8qgygzTU9JGFyztXH32omEFYXxLf95fR4Mg6uu",
-        "name": "Diplomatic History",
-        "semester": "2017-2018-1"
-      }
-    ],
-    "PSY2": [
-      {
-        "code": "201",
-        "department": "PSY2",
-        "ipfs_hash": "Qma3w81wKzLR6BBWWi4PqkLxwmYz9VLf4mZFJ31bsnD9bE",
-        "name": "Introduction to Statistics for Psychology I",
-        "semester": "2017-2018-1"
-      }
-    ]
-  },
   "2017-2018-2": {
     "CHEM": [
       {
-        "code": "201",
-        "department": "CHEM",
-        "ipfs_hash": "QmfPWRPpHQGnYBGfQpKUZXfVKA2WYdoBkMaTjNjTE1qP8D",
-        "name": "Organic Chemistry I",
+        "code": "201", 
+        "department": "CHEM", 
+        "ipfs_hash": "QmfPWRPpHQGnYBGfQpKUZXfVKA2WYdoBkMaTjNjTE1qP8D", 
+        "name": "Organic Chemistry I", 
         "semester": "2017-2018-2"
       }
-    ],
+    ], 
     "CMPE": [
       {
-        "code": "230",
-        "department": "CMPE",
-        "ipfs_hash": "QmcnmHwGYRhJt3HTpf1TiRK1ks1Wgwa1W6Z7hAXmXBkgFy",
-        "name": "Systems Programming",
+        "code": "230", 
+        "department": "CMPE", 
+        "ipfs_hash": "QmcnmHwGYRhJt3HTpf1TiRK1ks1Wgwa1W6Z7hAXmXBkgFy", 
+        "name": "Systems Programming", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "476",
-        "department": "CMPE",
-        "ipfs_hash": "QmRUBqFu4Uyaoy5ntHGxKjgzaVvsJx4veySKSHHEoYUkJn",
-        "name": "Distributed Systems",
+        "code": "160", 
+        "department": "CMPE", 
+        "ipfs_hash": "QmQ3DsWYxChKLZqJMEJzPFq48vQ4mPQfNuRs3XAQdqhJvk", 
+        "name": "Introduction to Object Oriented Programming", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "160",
-        "department": "CMPE",
-        "ipfs_hash": "QmQ3DsWYxChKLZqJMEJzPFq48vQ4mPQfNuRs3XAQdqhJvk",
-        "name": "Introduction to Object Oriented Programming",
+        "code": "476", 
+        "department": "CMPE", 
+        "ipfs_hash": "QmRUBqFu4Uyaoy5ntHGxKjgzaVvsJx4veySKSHHEoYUkJn", 
+        "name": "Distributed Systems", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "240",
-        "department": "CMPE",
-        "ipfs_hash": "QmUDR98XuvRuiy4mvbQkyZXoMCgCenioVtdt8q2PsQ1E17",
-        "name": "Digital Systems",
+        "code": "240", 
+        "department": "CMPE", 
+        "ipfs_hash": "QmUDR98XuvRuiy4mvbQkyZXoMCgCenioVtdt8q2PsQ1E17", 
+        "name": "Digital Systems", 
         "semester": "2017-2018-2"
       }
-    ],
+    ], 
     "FLED": [
       {
-        "code": "412",
-        "department": "FLED",
-        "ipfs_hash": "QmRL1r7fZfgDzGHYax6LQ4osrD5NXauuJXGCd7biNbF3Xe",
-        "name": "Practice Teaching in English as a Foreign Language",
+        "code": "412", 
+        "department": "FLED", 
+        "ipfs_hash": "QmRL1r7fZfgDzGHYax6LQ4osrD5NXauuJXGCd7biNbF3Xe", 
+        "name": "Practice Teaching in English as a Foreign Language", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "316",
-        "department": "FLED",
-        "ipfs_hash": "QmaQ6uzFmkmCJrxT2McztsUFeUhNncUoB4ERLJExsR7pFJ",
-        "name": "Varieties of English",
+        "code": "212", 
+        "department": "FLED", 
+        "ipfs_hash": "QmVKuEPbjFVgTRwFiwHCrSiSaY8LXoLe8mMVAjPX3vzsDd", 
+        "name": "Second Language Learning", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "212",
-        "department": "FLED",
-        "ipfs_hash": "QmVKuEPbjFVgTRwFiwHCrSiSaY8LXoLe8mMVAjPX3vzsDd",
-        "name": "Second Language Learning",
+        "code": "316", 
+        "department": "FLED", 
+        "ipfs_hash": "QmaQ6uzFmkmCJrxT2McztsUFeUhNncUoB4ERLJExsR7pFJ", 
+        "name": "Varieties of English", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "416",
-        "department": "FLED",
-        "ipfs_hash": "QmRL1r7fZfgDzGHYax6LQ4osrD5NXauuJXGCd7biNbF3Xe",
-        "name": "Seminar on Practice Teaching in EFL",
+        "code": "411", 
+        "department": "FLED", 
+        "ipfs_hash": "QmZARTyjx2RpvoTs413yJ37MygS3MPmAweWzo3P7mnchuW", 
+        "name": "\u00a0Technology-Enhanced Language Teaching", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "411",
-        "department": "FLED",
-        "ipfs_hash": "QmZARTyjx2RpvoTs413yJ37MygS3MPmAweWzo3P7mnchuW",
-        "name": "Technology-Enhanced Language Teaching",
+        "code": "416", 
+        "department": "FLED", 
+        "ipfs_hash": "QmRL1r7fZfgDzGHYax6LQ4osrD5NXauuJXGCd7biNbF3Xe", 
+        "name": "Seminar on Practice Teaching in EFL", 
         "semester": "2017-2018-2"
       }
-    ],
+    ], 
     "HIST": [
       {
-        "code": "222",
-        "department": "HIST",
-        "ipfs_hash": "QmWPYbCWqSidyMRbfvTJnFHS1XcRiVgCTBwi8pA3a5iMbJ",
-        "name": "Ottoman History Ottoman History 1300-1600",
+        "code": "102", 
+        "department": "HIST", 
+        "ipfs_hash": "QmWX3UaHnnTtwgfTSZA2ZGSw5cK82nFY9m5R7ZvBNLFsTq", 
+        "name": "Historical Method and Thought II", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "102",
-        "department": "HIST",
-        "ipfs_hash": "QmWX3UaHnnTtwgfTSZA2ZGSw5cK82nFY9m5R7ZvBNLFsTq",
-        "name": "Historical Method and Thought II",
+        "code": "222", 
+        "department": "HIST", 
+        "ipfs_hash": "QmWPYbCWqSidyMRbfvTJnFHS1XcRiVgCTBwi8pA3a5iMbJ", 
+        "name": "Ottoman History Ottoman History 1300-1600\u00a0", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "106",
-        "department": "HIST",
-        "ipfs_hash": "QmS27EVPTaGLotW4KrD19aTgEQwKNrvTvy8a7BsAgQu88S",
-        "name": "The Making of the Modern World II",
+        "code": "106", 
+        "department": "HIST", 
+        "ipfs_hash": "QmRcF4ev5jVhuS8fJxGrFTyEfNXWWib428NZMKjVSyuHzj", 
+        "name": "The Making of the Modern World II\u00a0\u00a0", 
         "semester": "2017-2018-2"
       }
-    ],
+    ], 
     "INTT": [
       {
-        "code": "122",
-        "department": "INTT",
-        "ipfs_hash": "QmSFNzo8Tjt5kPT3t57CxyMtcoSehoPMENezqr5dU2eYge",
-        "name": "Business Mathematics II",
+        "code": "356", 
+        "department": "INTT", 
+        "ipfs_hash": "QmRsNnasA9YUE5kBmrAXu5JzEGeedAH2A3TgTUwnhH9Q7V", 
+        "name": "International Transportation and Logistics", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "322",
-        "department": "INTT",
-        "ipfs_hash": "QmdwxAwjJY85SbPT6pmYD2bpi44cwasSgLAghkForptf9a",
-        "name": "Operations Analysis and Planning",
+        "code": "122", 
+        "department": "INTT", 
+        "ipfs_hash": "QmSFNzo8Tjt5kPT3t57CxyMtcoSehoPMENezqr5dU2eYge", 
+        "name": "Business Mathematics II", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "356",
-        "department": "INTT",
-        "ipfs_hash": "QmRsNnasA9YUE5kBmrAXu5JzEGeedAH2A3TgTUwnhH9Q7V",
-        "name": "International Transportation and Logistics",
+        "code": "322", 
+        "department": "INTT", 
+        "ipfs_hash": "QmdwxAwjJY85SbPT6pmYD2bpi44cwasSgLAghkForptf9a", 
+        "name": "Operations Analysis and Planning", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "112",
-        "department": "INTT",
-        "ipfs_hash": "QmaiGe1ZAPHTYD3fqH68sYdWFPd2Xwrd8LxiVY8eza39Ur",
-        "name": "Economics II",
+        "code": "228", 
+        "department": "INTT", 
+        "ipfs_hash": "QmdS59kVbvUJekZN12Q2n8MWSQgCLQVcmkTm6Xzj3Yo1cg", 
+        "name": "Applied Statistics II", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "204",
-        "department": "INTT",
-        "ipfs_hash": "Qmdo71dsKYqFv6Mf6uMsurj6Xkkp9w4qcQEAfkvuWbnSoV",
-        "name": "Managerial Accounting",
+        "code": "112", 
+        "department": "INTT", 
+        "ipfs_hash": "QmaiGe1ZAPHTYD3fqH68sYdWFPd2Xwrd8LxiVY8eza39Ur", 
+        "name": "Economics II", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "228",
-        "department": "INTT",
-        "ipfs_hash": "QmdS59kVbvUJekZN12Q2n8MWSQgCLQVcmkTm6Xzj3Yo1cg",
-        "name": "Applied Statistics II",
+        "code": "204", 
+        "department": "INTT", 
+        "ipfs_hash": "Qmdo71dsKYqFv6Mf6uMsurj6Xkkp9w4qcQEAfkvuWbnSoV", 
+        "name": "Managerial Accounting", 
         "semester": "2017-2018-2"
       }
-    ],
+    ], 
     "LING": [
       {
-        "code": "305",
-        "department": "LING",
-        "ipfs_hash": "QmYLQKegL3HGNd8h3yNMrb9XrRbP2T8hbL76PvEcc6TAb6",
-        "name": "Semantics",
+        "code": "102", 
+        "department": "LING", 
+        "ipfs_hash": "QmSDQFeMvfE4gQ6UBCNuqvW5TZTmy9V776zp7zeiiRx8X6", 
+        "name": "Introduction to Language and Linguistics II", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "101",
-        "department": "LING",
-        "ipfs_hash": "QmTyRdvr6AYRygpMy2BTSLN7cCFdwVwwk4rJaEnbra46DR",
-        "name": "Introduction to Language and Linguistics I",
+        "code": "101", 
+        "department": "LING", 
+        "ipfs_hash": "QmTyRdvr6AYRygpMy2BTSLN7cCFdwVwwk4rJaEnbra46DR", 
+        "name": "Introduction to Language and Linguistics I", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "102",
-        "department": "LING",
-        "ipfs_hash": "QmSDQFeMvfE4gQ6UBCNuqvW5TZTmy9V776zp7zeiiRx8X6",
-        "name": "Introduction to Language and Linguistics II",
+        "code": "470", 
+        "department": "LING", 
+        "ipfs_hash": "QmZqYcRf41CywpFcjF84bMKHpGXZgbutAk6miFe4Sksb5D", 
+        "name": "Advanced Studies in Turkish Linguistics 3+0+0) 3", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "104",
-        "department": "LING",
-        "ipfs_hash": "QmUorvGQnkHx16qWR6af2ZnZBQrjpa8bw7f6Xekp2Dt2np",
-        "name": "Phonetics",
+        "code": "202", 
+        "department": "LING", 
+        "ipfs_hash": "QmUZuiNayPkXxuw5JqacH4tXrcpUidxBwcuYMCaQ8iv63i", 
+        "name": "Morphology", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "470",
-        "department": "LING",
-        "ipfs_hash": "QmZqYcRf41CywpFcjF84bMKHpGXZgbutAk6miFe4Sksb5D",
-        "name": "Advanced Studies in Turkish Linguistics 3+0+0) 3",
+        "code": "305", 
+        "department": "LING", 
+        "ipfs_hash": "QmYLQKegL3HGNd8h3yNMrb9XrRbP2T8hbL76PvEcc6TAb6", 
+        "name": "Semantics", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "202",
-        "department": "LING",
-        "ipfs_hash": "QmWSwK6zUfTWQrz8hduUhwedStwqWfP94CrURBe31TpSVR",
-        "name": "Morphology",
+        "code": "104", 
+        "department": "LING", 
+        "ipfs_hash": "QmUorvGQnkHx16qWR6af2ZnZBQrjpa8bw7f6Xekp2Dt2np", 
+        "name": "Phonetics", 
         "semester": "2017-2018-2"
       }
-    ],
+    ], 
     "MATH": [
       {
-        "code": "132",
-        "department": "MATH",
-        "ipfs_hash": "QmUYmNev6FMx9WFohSZt5z3DGXZUwZHpQFznpprGaNZsAU",
-        "name": "Calculus of Several Variables",
+        "code": "324", 
+        "department": "MATH", 
+        "ipfs_hash": "QmesPpfgVJeYkSZQB4heVoBbfm1gyBKieQz11uetiGyuri", 
+        "name": "Representation Theory of Finite Groups", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "102",
-        "department": "MATH",
-        "ipfs_hash": "QmVXW7mjFR2Svd3G7rJL3RbT3iSqWhWkYdn8KJn63XUaCa",
-        "name": "Calculus II",
+        "code": "234", 
+        "department": "MATH", 
+        "ipfs_hash": "QmWxyw3zdT7pujEdsv3apzLApUovacb32f4jNU2Se4C6Wj", 
+        "name": "Advanced Calculus II \u00a0", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "222",
-        "department": "MATH",
-        "ipfs_hash": "QmSWXYtzbjKmsKVWi4kiTT7PJ1rACVLgSVbNvXRe21bYxK",
-        "name": "Group Theory",
+        "code": "436", 
+        "department": "MATH", 
+        "ipfs_hash": "QmQSmCRCCfZJ1E6UqQvcq3jEy2h2apbb4CZVvNb2xhSsnN", 
+        "name": "Functional Analysis", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "234",
-        "department": "MATH",
-        "ipfs_hash": "QmWxyw3zdT7pujEdsv3apzLApUovacb32f4jNU2Se4C6Wj",
-        "name": "Advanced Calculus II",
+        "code": "477", 
+        "department": "MATH", 
+        "ipfs_hash": "QmbxRcTegEB1q3F4N8zJhSUVaUndCpM9byPwvUdaS4pKSh", 
+        "name": "Projective Geometry", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "324",
-        "department": "MATH",
-        "ipfs_hash": "QmVoaP2ZQWtmnQ9JmGs16szwiWRGtrLmcEbsbPt5qnn17Y",
-        "name": "Representation Theory of Finite Groups",
+        "code": "202", 
+        "department": "MATH", 
+        "ipfs_hash": "QmW7b5NVPfWyyri2oiHyX8UMx1Mtn51fcPoUygkDy73mom", 
+        "name": "Differential Equations", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "436",
-        "department": "MATH",
-        "ipfs_hash": "QmQSmCRCCfZJ1E6UqQvcq3jEy2h2apbb4CZVvNb2xhSsnN",
-        "name": "Functional Analysis",
+        "code": "201", 
+        "department": "MATH", 
+        "ipfs_hash": "QmSqghZX9dFMevcYwdb9ccTv28LyGJjjVn5q8XeJXFxtuV", 
+        "name": "Matrix Theory", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "202",
-        "department": "MATH",
-        "ipfs_hash": "QmW7b5NVPfWyyri2oiHyX8UMx1Mtn51fcPoUygkDy73mom",
-        "name": "Differential Equations",
+        "code": "433", 
+        "department": "MATH", 
+        "ipfs_hash": "QmRPbHjhteF7Uk7nyCbsCWKzfWhiS7UxdBg5EwTpuh2b69", 
+        "name": "Fourier Analysis", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "477",
-        "department": "MATH",
-        "ipfs_hash": "QmbxRcTegEB1q3F4N8zJhSUVaUndCpM9byPwvUdaS4pKSh",
-        "name": "Projective Geometry",
+        "code": "102", 
+        "department": "MATH", 
+        "ipfs_hash": "QmVXW7mjFR2Svd3G7rJL3RbT3iSqWhWkYdn8KJn63XUaCa", 
+        "name": "Calculus II", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "231",
-        "department": "MATH",
-        "ipfs_hash": "QmXqeK1mGXyWsS6zo3hnGvrjTr53bQYb26v2KZqF5EFY4X",
-        "name": "Advanced Calculus I",
+        "code": "162", 
+        "department": "MATH", 
+        "ipfs_hash": "QmRXyP6mkQhjbeyMzd1PvLARcXDgdUXfU8FPZcgytWBzYv", 
+        "name": "Discrete Mathematics", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "162",
-        "department": "MATH",
-        "ipfs_hash": "QmRXyP6mkQhjbeyMzd1PvLARcXDgdUXfU8FPZcgytWBzYv",
-        "name": "Discrete Mathematics",
+        "code": "132", 
+        "department": "MATH", 
+        "ipfs_hash": "QmUYmNev6FMx9WFohSZt5z3DGXZUwZHpQFznpprGaNZsAU", 
+        "name": "Calculus of Several Variables \u00a0", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "433",
-        "department": "MATH",
-        "ipfs_hash": "QmRPbHjhteF7Uk7nyCbsCWKzfWhiS7UxdBg5EwTpuh2b69",
-        "name": "Fourier Analysis",
-        "semester": "2017-2018-2"
-      },
-      {
-        "code": "201",
-        "department": "MATH",
-        "ipfs_hash": "QmSqghZX9dFMevcYwdb9ccTv28LyGJjjVn5q8XeJXFxtuV",
-        "name": "Matrix Theory",
+        "code": "222", 
+        "department": "MATH", 
+        "ipfs_hash": "QmSWXYtzbjKmsKVWi4kiTT7PJ1rACVLgSVbNvXRe21bYxK", 
+        "name": "Group Theory", 
         "semester": "2017-2018-2"
       }
-    ],
+    ], 
     "PHIL": [
       {
-        "code": "112",
-        "department": "PHIL",
-        "ipfs_hash": "QmZZHMWG4QNxK5tFMwZL6h8tvyJSuE5c2tkQ72XzU8rcw9",
-        "name": "Introduction to Modern Philosophy",
+        "code": "112", 
+        "department": "PHIL", 
+        "ipfs_hash": "QmZZHMWG4QNxK5tFMwZL6h8tvyJSuE5c2tkQ72XzU8rcw9", 
+        "name": "Introduction to Modern Philosophy", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "106",
-        "department": "PHIL",
-        "ipfs_hash": "QmbpSywDXhuU6HEMbQhR2sijUYie5hX4uEv6kFTAboxDkh",
-        "name": "Philosophical Texts",
+        "code": "214", 
+        "department": "PHIL", 
+        "ipfs_hash": "QmX6c8xJJ4zgpeVkrmW452tNHRrX7m9AmKWZM3q9MEJTGW", 
+        "name": "History of Philosophy II", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "214",
-        "department": "PHIL",
-        "ipfs_hash": "QmX6c8xJJ4zgpeVkrmW452tNHRrX7m9AmKWZM3q9MEJTGW",
-        "name": "History of Philosophy II",
+        "code": "314", 
+        "department": "PHIL", 
+        "ipfs_hash": "QmPsd72ckX8RDZKV9kr7shgwA4Ta6fxSiPEv5wFn7Wiszu", 
+        "name": "History of Philosophy IV", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "314",
-        "department": "PHIL",
-        "ipfs_hash": "QmPsd72ckX8RDZKV9kr7shgwA4Ta6fxSiPEv5wFn7Wiszu",
-        "name": "History of Philosophy IV",
+        "code": "106", 
+        "department": "PHIL", 
+        "ipfs_hash": "QmbpSywDXhuU6HEMbQhR2sijUYie5hX4uEv6kFTAboxDkh", 
+        "name": "Philosophical Texts", 
         "semester": "2017-2018-2"
       }
-    ],
+    ], 
     "PHYS": [
       {
-        "code": "402",
-        "department": "PHYS",
-        "ipfs_hash": "QmddxJQtkJUPShL1nVTC5x1sNMDbR4Sxq1oojAu2nC34M1",
-        "name": "Electromagnetism II",
+        "code": "408", 
+        "department": "PHYS", 
+        "ipfs_hash": "QmRdqYoutgTQbqKah1dXTd7PhKCxWGmsLctxFpahdYQs31", 
+        "name": "Advanced Quantum Physics II", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "121",
-        "department": "PHYS",
-        "ipfs_hash": "QmRwc79VQXkK9CuLg8G7rGhEokizo2jX8xtK8omB2gSGP6",
-        "name": "Introductory Mechanics and Thermodynamics",
+        "code": "226", 
+        "department": "PHYS", 
+        "ipfs_hash": "QmXyYwF4rLBVSLjnEgSg1sV8fiAHxnHyamKGWrA5hG3U4v", 
+        "name": "Introduction to Earth Science II", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "102",
-        "department": "PHYS",
-        "ipfs_hash": "QmWYKSbLNQYCAnXuefuDvkbJfWcbKd6SPWcBRyWZVJcWHz",
-        "name": "Physics II",
+        "code": "301", 
+        "department": "PHYS", 
+        "ipfs_hash": "QmcFMS6U7grNQqhspoLof1fxZ4N8xLjRY7ypugKg8mKTG2", 
+        "name": "Classical Mechanics I Klasik Mekanik I)", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "201",
-        "department": "PHYS",
-        "ipfs_hash": "QmfXBHK4VNur7jaT3UQx3SxAbLv9t8YYgEfCbzx5N4qeEC",
-        "name": "Physics III",
+        "code": "201", 
+        "department": "PHYS", 
+        "ipfs_hash": "QmfXBHK4VNur7jaT3UQx3SxAbLv9t8YYgEfCbzx5N4qeEC", 
+        "name": "Physics III", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "202",
-        "department": "PHYS",
-        "ipfs_hash": "QmdfHBRj6uGRDcdWGKgVvystCUwBgSuFirdxmTn1PvRM7P",
-        "name": "Physics IV",
+        "code": "402", 
+        "department": "PHYS", 
+        "ipfs_hash": "QmddxJQtkJUPShL1nVTC5x1sNMDbR4Sxq1oojAu2nC34M1", 
+        "name": "Electromagnetism II", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "408",
-        "department": "PHYS",
-        "ipfs_hash": "QmRdqYoutgTQbqKah1dXTd7PhKCxWGmsLctxFpahdYQs31",
-        "name": "Advanced Quantum Physics II",
+        "code": "102", 
+        "department": "PHYS", 
+        "ipfs_hash": "QmWYKSbLNQYCAnXuefuDvkbJfWcbKd6SPWcBRyWZVJcWHz", 
+        "name": "Physics II", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "412",
-        "department": "PHYS",
-        "ipfs_hash": "QmNZY9oEcXqA8FCtGBHXPxzmBJXedabponYAvv7D879yyW",
-        "name": "Quantum Mechanics II",
+        "code": "412", 
+        "department": "PHYS", 
+        "ipfs_hash": "QmNZY9oEcXqA8FCtGBHXPxzmBJXedabponYAvv7D879yyW", 
+        "name": "Quantum Mechanics II", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "226",
-        "department": "PHYS",
-        "ipfs_hash": "QmXyYwF4rLBVSLjnEgSg1sV8fiAHxnHyamKGWrA5hG3U4v",
-        "name": "Introduction to Earth Science II",
+        "code": "121", 
+        "department": "PHYS", 
+        "ipfs_hash": "QmRwc79VQXkK9CuLg8G7rGhEokizo2jX8xtK8omB2gSGP6", 
+        "name": "Introductory Mechanics and Thermodynamics", 
+        "semester": "2017-2018-2"
+      }, 
+      {
+        "code": "202", 
+        "department": "PHYS", 
+        "ipfs_hash": "QmdfHBRj6uGRDcdWGKgVvystCUwBgSuFirdxmTn1PvRM7P", 
+        "name": "Physics IV", 
         "semester": "2017-2018-2"
       }
-    ],
+    ], 
     "POLS": [
       {
-        "code": "422",
-        "department": "POLS",
-        "ipfs_hash": "QmX3EddtEVk7SzRPuqDQSv9zcKrSRKHBCy2kUtjyqpjNNu",
-        "name": "Politics of Markets and Capitalism",
+        "code": "206", 
+        "department": "POLS", 
+        "ipfs_hash": "QmPFvK9vKmFBgsq224dhaZR5JwzKCd12U3rAD8T3U6EsEc", 
+        "name": "Political Science Research Methods", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "314",
-        "department": "POLS",
-        "ipfs_hash": "Qmd7RB4mjmsWvdbEEeXyGZNv9rnNc4zbybHtg6HdjQC99s",
-        "name": "Politics and Cinema",
+        "code": "449", 
+        "department": "POLS", 
+        "ipfs_hash": "Qmaj55uYtZf4nbHigoY2sPt96ZKgH2Amh4LiToWgqKXBsC", 
+        "name": "International Conflict Analysis", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "405",
-        "department": "POLS",
-        "ipfs_hash": "Qmb9oohxmRoa6PQuzdyftdnPWY4mnt4pfvmwKv4JT2LPPL",
-        "name": "Communications and Politics",
+        "code": "405", 
+        "department": "POLS", 
+        "ipfs_hash": "Qmb9oohxmRoa6PQuzdyftdnPWY4mnt4pfvmwKv4JT2LPPL", 
+        "name": "Communications and Politics", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "206",
-        "department": "POLS",
-        "ipfs_hash": "QmPFvK9vKmFBgsq224dhaZR5JwzKCd12U3rAD8T3U6EsEc",
-        "name": "Political Science Research Methods",
+        "code": "314", 
+        "department": "POLS", 
+        "ipfs_hash": "Qmd7RB4mjmsWvdbEEeXyGZNv9rnNc4zbybHtg6HdjQC99s", 
+        "name": "Politics and Cinema", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "449",
-        "department": "POLS",
-        "ipfs_hash": "QmWsJzgaFMLN2DPzeKjaqLi99h3wTih3Wpb2CBPiSf1rHD",
-        "name": "International Conflict Analysis",
+        "code": "422", 
+        "department": "POLS", 
+        "ipfs_hash": "QmX3EddtEVk7SzRPuqDQSv9zcKrSRKHBCy2kUtjyqpjNNu", 
+        "name": "Politics of Markets and Capitalism", 
         "semester": "2017-2018-2"
       }
-    ],
+    ], 
     "PRED": [
       {
-        "code": "210",
-        "department": "PRED",
-        "ipfs_hash": "QmSYZiPtfPQcvCq6EXz8yWWdLB2v9fxkzRh94QC2cdBmLu",
-        "name": "Music and Movement in Early Childhood",
+        "code": "210", 
+        "department": "PRED", 
+        "ipfs_hash": "QmSYZiPtfPQcvCq6EXz8yWWdLB2v9fxkzRh94QC2cdBmLu", 
+        "name": "Music and Movement in Early Childhood", 
         "semester": "2017-2018-2"
-      },
+      }, 
       {
-        "code": "348",
-        "department": "PRED",
-        "ipfs_hash": "Qmcu5BAPQyWtxBoLSxftT3wJKBVS21SsGs6xetoFWWZzY2",
-        "name": "Community Service",
+        "code": "348", 
+        "department": "PRED", 
+        "ipfs_hash": "Qmcu5BAPQyWtxBoLSxftT3wJKBVS21SsGs6xetoFWWZzY2", 
+        "name": "Community Service", 
         "semester": "2017-2018-2"
       }
-    ],
+    ], 
     "SCED": [
       {
-        "code": "120",
-        "department": "SCED",
-        "ipfs_hash": "QmcoBmLFv5oRZnUsHBGAsWcrbitDJafAK1EC8C3Roj25Au",
-        "name": "Academic Orientation to Mathematics and Science Education",
+        "code": "120", 
+        "department": "SCED", 
+        "ipfs_hash": "QmcoBmLFv5oRZnUsHBGAsWcrbitDJafAK1EC8C3Roj25Au", 
+        "name": "Academic Orientation to Mathematics and Science Education", 
         "semester": "2017-2018-2"
       }
     ]
