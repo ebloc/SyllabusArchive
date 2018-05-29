@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Syllabus Manager</title>
+
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+
+        <h1>Syllabus Manager</h1>
+
+        <h2 id="manager"></h2>
+
+        <label for="name" class="col-lg-2 control-label">University</label>
+        <input id="university" type="text">
+
+        <label for="name" class="col-lg-2 control-label">Semester</label>
+        <input id="semester" type="text">
+
+		<label for="name" class="col-lg-2 control-label">Department</label>
+        <input id="department" type="text">
+
+        <label for="name" class="col-lg-2 control-label">Course</label>
+        <input id="course" type="text">
+
+        <button id="button">Get Hash</button>
+		
+		<a href="upload.html"><button>Go To Upload Course</button></a>
+	
+		<h2 id="showsyllabus"></h2>
+		
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+   <script>
+
+        if (typeof web3 !== 'undefined') {
+            web3 = new Web3(web3.currentProvider);
+        } else {
+            // set the provider you want from Web3.providers
+            web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+        }
+			web3.eth.defaultAccount = web3.eth.accounts[0];
+
+	var SyllabiContract = web3.eth.contract([
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_student",
+				"type": "address"
+			},
+			{
+				"name": "_uniName",
+				"type": "string"
+			},
+			{
+				"name": "_semesterName",
+				"type": "string"
+			},
+			{
+				"name": "_departmentName",
+				"type": "string"
+			},
+			{
+				"name": "_courseName",
+				"type": "string"
+			}
+		],
+		"name": "addStudentToCourse",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_uniName",
+				"type": "string"
+			},
+			{
+				"name": "_semesterName",
+				"type": "string"
+			}
+		],
+		"name": "addSemester",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_uniName",
+				"type": "string"
+			},
+			{
+				"name": "_semesterName",
+				"type": "string"
+			},
+			{
+				"name": "_departmentName",
+				"type": "string"
+			}
+		],
+		"name": "addDepartment",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_name",
+				"type": "string"
+			}
+		],
+		"name": "addUniversity",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_uniName",
+				"type": "string"
+			},
+			{
+				"name": "_semesterName",
+				"type": "string"
+			},
+			{
+				"name": "_departmentName",
+				"type": "string"
+			}
+		],
+		"name": "getDepartment",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_uniName",
+				"type": "string"
+			},
+			{
+				"name": "_semesterName",
+				"type": "string"
+			},
+			{
+				"name": "_departmentName",
+				"type": "string"
+			},
+			{
+				"name": "_courseName",
+				"type": "string"
+			}
+		],
+		"name": "getSyllabusHash",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getUniNumber",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_uniID",
+				"type": "uint256"
+			}
+		],
+		"name": "getUniversityById",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_student",
+				"type": "address"
+			},
+			{
+				"name": "_uniName",
+				"type": "string"
+			},
+			{
+				"name": "_semesterName",
+				"type": "string"
+			},
+			{
+				"name": "_departmentName",
+				"type": "string"
+			},
+			{
+				"name": "_courseName",
+				"type": "string"
+			}
+		],
+		"name": "verifyThatStudentGraduatedFromCourse",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_uniName",
+				"type": "string"
+			}
+		],
+		"name": "getUniversity",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_uniName",
+				"type": "string"
+			},
+			{
+				"name": "_semesterName",
+				"type": "string"
+			},
+			{
+				"name": "_departmentName",
+				"type": "string"
+			},
+			{
+				"name": "_courseName",
+				"type": "string"
+			},
+			{
+				"name": "_hash",
+				"type": "string"
+			}
+		],
+		"name": "addCourse",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]);
+
+
+
+
+	
+
+	var contract = SyllabiContract.at('0x4acd101f1093ca64bfd32792c22e091b5c221d97');
+
+	console.log(contract);
+
+		$('#button').click(function() {
+			contract.getSyllabusHash($("#university").val(),$("#semester").val(),$("#department").val(),$("#course").val(),function(error,result) {
+			if(!error)
+			$("#showsyllabus").html("Hash is : " + result);
+			else
+			console.log(error);
+		});
+			
+		});
+
+</script>
+
+
+    
+
+</body>
+</html>
