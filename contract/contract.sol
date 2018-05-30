@@ -46,6 +46,13 @@ contract Syllabi {
         Department storage department = semester.departments[semester.departmentNameToId[_departmentName]];
         department.courses[department.courseNameToId[_courseName]].students.push(_student);
     }
+
+    function addInstructorToCourse(address _instructor,string _uniName, string _semesterName, string _departmentName, string _courseName) external{
+        University storage uni = universities[uniNameToId[_uniName]];
+        Semester storage semester = uni.semesters[uni.semesterNameToId[_semesterName]];
+        Department storage department = semester.departments[semester.departmentNameToId[_departmentName]];
+        department.courses[department.courseNameToId[_courseName]].instructor = _instructor;
+    }
     
     function verifyThatStudentGraduatedFromCourse(address _student,string _uniName, string _semesterName, string _departmentName, string _courseName) external{
         University storage uni = universities[uniNameToId[_uniName]];
@@ -58,11 +65,11 @@ contract Syllabi {
 
     function addUniversity(string _name) external {
         if(!uniExists[_name]){
-        uniGlobal.name = _name;
-        uint id = universities.push(uniGlobal);
-        uniNameToId[_name] = id - 1;
-        uniNumber++;
-        uniExists[_name] = true;
+            uniGlobal.name = _name;
+            uint id = universities.push(uniGlobal);
+            uniNameToId[_name] = id - 1;
+            uniNumber++;
+            uniExists[_name] = true;
         }
     }
     
@@ -72,10 +79,10 @@ contract Syllabi {
         
         University storage uni = universities[uniNameToId[_uniName]];
         if(!uni.semesterExists[_semesterName]){
-        semesterGlobal.name = _semesterName;
-        uint id = uni.semesters.push(semesterGlobal);
-        uni.semesterNameToId[_semesterName] = id - 1;
-        uni.semesterExists[_semesterName] = true;
+            semesterGlobal.name = _semesterName;
+            uint id = uni.semesters.push(semesterGlobal);
+            uni.semesterNameToId[_semesterName] = id - 1;
+            uni.semesterExists[_semesterName] = true;
         }
     }
 
@@ -83,11 +90,10 @@ contract Syllabi {
         University storage uni = universities[uniNameToId[_uniName]];
         Semester storage semester = uni.semesters[uni.semesterNameToId[_semesterName]];
         if(!semester.departmentExists[_departmentName]){
-        departmentGlobal.name = _departmentName;
-        uint id = uni.semesters[uni.semesterNameToId[_semesterName]].departments.push(departmentGlobal);
-        uni.semesters[uni.semesterNameToId[_semesterName]].departmentNameToId[_departmentName] = id - 1;
-        semester.departmentExists[_departmentName] = true;
-            
+            departmentGlobal.name = _departmentName;
+            uint id = uni.semesters[uni.semesterNameToId[_semesterName]].departments.push(departmentGlobal);
+            uni.semesters[uni.semesterNameToId[_semesterName]].departmentNameToId[_departmentName] = id - 1;
+            semester.departmentExists[_departmentName] = true;  
         }
             
     }
@@ -97,11 +103,11 @@ contract Syllabi {
         Semester storage semester = uni.semesters[uni.semesterNameToId[_semesterName]];
         Department storage department = semester.departments[semester.departmentNameToId[_departmentName]];
         if(!department.courseExists[_courseName]){
-        courseGlobal.name = _courseName;
-        courseGlobal.syllabusHash = _hash;
-        uint id = department.courses.push(courseGlobal);
-        department.courseNameToId[_courseName] = id - 1;
-        department.courseExists[_courseName] = true ;
+            courseGlobal.name = _courseName;
+            courseGlobal.syllabusHash = _hash;
+            uint id = department.courses.push(courseGlobal);
+            department.courseNameToId[_courseName] = id - 1;
+            department.courseExists[_courseName] = true;
         }
     }
 
