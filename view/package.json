@@ -8,6 +8,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bulma": "^0.7.1",
     "ethereumjs-testrpc": "^6.0.3",
     "web3": "^0.20.1"
   },

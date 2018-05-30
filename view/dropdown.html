@@ -1,679 +1,695 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Syllabus Manager</title>
-
-    <link rel="stylesheet" type="text/css" href="main.css">
-
-    <script src="./node_modules/web3/dist/web3.min.js"></script>
-
-</head>
-<body>
-
-<select id=sel_universities>
-</select>
-<select id=sel_semesters>
-</select>
-<select id=sel_departments>
-</select>
-<select id=sel_courses>
-</select>
-
- <button id="button">Get Syllabus</button>
-
-<h2 id="showsyllabus"></h2>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-
-   <script>
-
-        if (typeof web3 !== 'undefined') {
-            web3 = new Web3(web3.currentProvider);
-        } else {
-            // set the provider you want from Web3.providers
-            web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-        }
-			web3.eth.defaultAccount = web3.eth.accounts[0];
-
-	var SyllabiContract = web3.eth.contract([
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "_uniID",
-				"type": "uint256"
-			},
-			{
-				"name": "_semID",
-				"type": "uint256"
-			},
-			{
-				"name": "_depID",
-				"type": "uint256"
-			}
-		],
-		"name": "getDepartmentById",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_student",
-				"type": "address"
-			},
-			{
-				"name": "_uniName",
-				"type": "string"
-			},
-			{
-				"name": "_semesterName",
-				"type": "string"
-			},
-			{
-				"name": "_departmentName",
-				"type": "string"
-			},
-			{
-				"name": "_courseName",
-				"type": "string"
-			}
-		],
-		"name": "addStudentToCourse",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "_uniID",
-				"type": "uint256"
-			},
-			{
-				"name": "_semID",
-				"type": "uint256"
-			}
-		],
-		"name": "getSemesterById",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_uniName",
-				"type": "string"
-			},
-			{
-				"name": "_semesterName",
-				"type": "string"
-			}
-		],
-		"name": "addSemester",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "uniId",
-				"type": "uint256"
-			},
-			{
-				"name": "semID",
-				"type": "uint256"
-			},
-			{
-				"name": "depID",
-				"type": "uint256"
-			}
-		],
-		"name": "getCourseNumber",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_uniName",
-				"type": "string"
-			},
-			{
-				"name": "_semesterName",
-				"type": "string"
-			},
-			{
-				"name": "_departmentName",
-				"type": "string"
-			}
-		],
-		"name": "addDepartment",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_name",
-				"type": "string"
-			}
-		],
-		"name": "addUniversity",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "_uniName",
-				"type": "string"
-			},
-			{
-				"name": "_semesterName",
-				"type": "string"
-			},
-			{
-				"name": "_departmentName",
-				"type": "string"
-			}
-		],
-		"name": "getDepartment",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "_uniName",
-				"type": "string"
-			},
-			{
-				"name": "_semesterName",
-				"type": "string"
-			},
-			{
-				"name": "_departmentName",
-				"type": "string"
-			},
-			{
-				"name": "_courseName",
-				"type": "string"
-			}
-		],
-		"name": "getSyllabusHash",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getUniNumber",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "uniId",
-				"type": "uint256"
-			}
-		],
-		"name": "getSemesterNumber",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "uniId",
-				"type": "uint256"
-			},
-			{
-				"name": "semId",
-				"type": "uint256"
-			},
-			{
-				"name": "depId",
-				"type": "uint256"
-			},
-			{
-				"name": "courseId",
-				"type": "uint256"
-			}
-		],
-		"name": "getHash",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "_uniID",
-				"type": "uint256"
-			}
-		],
-		"name": "getUniversityById",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_student",
-				"type": "address"
-			},
-			{
-				"name": "_uniName",
-				"type": "string"
-			},
-			{
-				"name": "_semesterName",
-				"type": "string"
-			},
-			{
-				"name": "_departmentName",
-				"type": "string"
-			},
-			{
-				"name": "_courseName",
-				"type": "string"
-			}
-		],
-		"name": "verifyThatStudentGraduatedFromCourse",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "uniId",
-				"type": "uint256"
-			},
-			{
-				"name": "semID",
-				"type": "uint256"
-			}
-		],
-		"name": "getDepartmentNumber",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "_uniName",
-				"type": "string"
-			}
-		],
-		"name": "getUniversity",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "_uniID",
-				"type": "uint256"
-			},
-			{
-				"name": "_semID",
-				"type": "uint256"
-			},
-			{
-				"name": "_depID",
-				"type": "uint256"
-			},
-			{
-				"name": "_courseID",
-				"type": "uint256"
-			}
-		],
-		"name": "getCourseById",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_uniName",
-				"type": "string"
-			},
-			{
-				"name": "_semesterName",
-				"type": "string"
-			},
-			{
-				"name": "_departmentName",
-				"type": "string"
-			},
-			{
-				"name": "_courseName",
-				"type": "string"
-			},
-			{
-				"name": "_hash",
-				"type": "string"
-			}
-		],
-		"name": "addCourse",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	}
-]);
-
-
-
-
-	
-
-	var contract = SyllabiContract.at('0x741bbe59244e808a0e8a8fd7687a6275be2feb10');
-
-	console.log(contract);
-
-	function add_option (select_id, text) {
-var select = document.getElementById(select_id);
-select.options[select.options.length] = new Option(text);
-}
-
-function clear_options (select_id) {
-var select = document.getElementById(select_id);
-select.options.length = 0;
-}
-
-
-
-
-
-
-
-
-
-
-contract.getUniNumber(function (error,result) {
-if(!error){
-
- for (var i = 0; i < result; i++) {
-	contract.getUniversityById(i,function (error2,result2) {
-if(!error2){
-	add_option("sel_universities",result2);
-
-}
-else{
-	
-	console.log(error2);
-	
-}
-});
-}
-	
-}
-else{
-	console.log(error);
-	
-}
-});
-
-
-
-
-
-
-
-
-
-
-document.getElementById('sel_universities').onclick = sel_universities_onchange;
-
-function sel_universities_onchange () {
-var sel_universities = document.getElementById("sel_universities");
-clear_options("sel_semesters");
-clear_options("sel_departments");
-contract.getSemesterNumber(sel_universities.selectedIndex,function (error,result){
-if(!error){
-for (var i=0 ; i<result ; i++){
-contract.getSemesterById(sel_universities.selectedIndex,i,function (error2,result2) {
-if(!error2){
-	
-	add_option("sel_semesters",result2);
-
-}
-else{
-	
-	console.log(error2);
-
-}
-});
-
-}
-
-}
-else{
-	console.log(error);
-	
-}
-});
-
-}
-
-
-
-
-
-document.getElementById('sel_semesters').onclick = sel_semesters_onchange;
-
-function sel_semesters_onchange () {
-var sel_universities = document.getElementById("sel_universities");
-var sel_semesters = document.getElementById("sel_semesters");
-clear_options("sel_departments");
-contract.getDepartmentNumber(sel_universities.selectedIndex,sel_semesters.selectedIndex,function (error,result){
-if(!error){
-for (var i=0 ; i<result ; i++){
-contract.getDepartmentById(sel_universities.selectedIndex,sel_semesters.selectedIndex,i,function (error2,result2) {
-if(!error2){
-	
-	add_option("sel_departments",result2);
-
-}
-else{
-	
-	console.log(error2);
-	
-}
-});
-
-}
-
-}
-else{
-	console.log(error);
-	
-}
-});
-
-}
-
-
-
-
-
-document.getElementById('sel_departments').onclick = sel_departments_onchange;
-
-function sel_departments_onchange () {
-var sel_universities = document.getElementById("sel_universities");
-var sel_semesters = document.getElementById("sel_semesters");
-var sel_departments = document.getElementById("sel_departments");
-
-clear_options("sel_courses");
-contract.getCourseNumber(sel_universities.selectedIndex,sel_semesters.selectedIndex,sel_departments.selectedIndex,function (error,result){
-if(!error){
-for (var i=0 ; i<result ; i++){
-contract.getCourseById(sel_universities.selectedIndex,sel_semesters.selectedIndex,sel_departments.selectedIndex,i,function (error2,result2) {
-if(!error2){
-	
-	add_option("sel_courses",result2);
-
-}
-else{
-	
-	console.log(error2);
-	
-}
-});
-
-}
-
-}
-else{
-	console.log(error);	
-}
-});
-
-}
-
-
-console.log(contract);
-
-		$('#button').click(function() {
-			var sel_universities = document.getElementById("sel_universities");
-			var sel_semesters = document.getElementById("sel_semesters");
-			var sel_departments = document.getElementById("sel_departments");
-			var sel_courses = document.getElementById("sel_courses");
-	
-			contract.getHash(sel_universities.selectedIndex,sel_semesters.selectedIndex,sel_departments.selectedIndex,
-			sel_courses.selectedIndex,function(error,result) {
-			if(!error){
-            $("#showsyllabus").html("Hash is : " + result);
-                 showPdf(result);
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Syllabus Manager</title>
+
+        <!-- <link rel="stylesheet" type="text/css" href="main.css"> -->
+
+        <script src="./node_modules/web3/dist/web3.min.js"></script>
+        <script
+            defer="defer"
+            src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+
+    </head>
+    <body>
+        <section class="hero is-info">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">
+                        Ipfs and Blockchain Based Archival System For Open Academic Data
+                    </h1>
+                    <h2 class="subtitle">
+                        Academic Data are worth being decentrealized!
+                    </h2>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+
+                <!-- <nav<na class="level"> <div class="level-item has-text-centered"> <div
+                class="select"> <select id="sel_universities"></select> </div> </div> <div
+                class="level-item has-text-centered"> <div class="select"> <select
+                id="sel_semesters"></select> </div> </div> <div class="level-item
+                has-text-centered"> <div class="select"> <select id="sel_departments"></select>
+                </div> </div> <div class="level-item has-text-centered"> <div class="select">
+                <select id="sel_courses"></select> </div> </div> </nav> -->
+
+                <div class="columns">
+                    <div class="column has-text-right">
+                        <div class="is-size-4">University:</div>
+                    </div>
+                    <div class="column">
+						<div class="select is-medium">
+                            <select id="sel_universities"></select>
+                    	</div>
+					</div>
+                </div>
+                <div class="columns">
+                    <div class="column has-text-right">
+                        <div class="is-size-4">Semester:</div>
+                    </div>
+                    <div class="column">
+                        <div class="select is-medium">
+                            <select id="sel_semesters"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="columns">
+                    <div class="column has-text-right">
+                        <div class="is-size-4">Department:</div>
+                    </div>
+                    <div class="column">
+                        <div class="select is-medium">
+                            <select id="sel_departments"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="columns">
+                    <div class="column has-text-right">
+                        <div class="is-size-4">Course:</div>
+                    </div>
+                    <div class="column">
+                        <div class="select is-medium">
+                            <select id="sel_courses"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column has-text-centered">
+                        <a id="button" class="button is-info is-medium">Get Syllabus</a>
+                    </div>
+                </div>
+
+                <!-- <h2 id="showsyllabus"></h2> -->
+            </div>
+        </section>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+        <script>
+
+            if (typeof web3 !== 'undefined') {
+                web3 = new Web3(web3.currentProvider);
+            } else {
+                // set the provider you want from Web3.providers
+                web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
             }
-		});
-			
-});
+            web3.eth.defaultAccount = web3
+                .eth
+                .accounts[0];
 
-function showPdf(hash) {
-    console.log(hash);
-    var win = window.open("http://localhost:8080/ipfs/"+hash, '_blank');
-    win.focus();
-}
+            var SyllabiContract = web3
+                .eth
+                .contract([
+                    {
+                        "constant": true,
+                        "inputs": [
+                            {
+                                "name": "_uniID",
+                                "type": "uint256"
+                            }, {
+                                "name": "_semID",
+                                "type": "uint256"
+                            }, {
+                                "name": "_depID",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "getDepartmentById",
+                        "outputs": [
+                            {
+                                "name": "",
+                                "type": "string"
+                            }
+                        ],
+                        "payable": false,
+                        "stateMutability": "view",
+                        "type": "function"
+                    }, {
+                        "constant": false,
+                        "inputs": [
+                            {
+                                "name": "_student",
+                                "type": "address"
+                            }, {
+                                "name": "_uniName",
+                                "type": "string"
+                            }, {
+                                "name": "_semesterName",
+                                "type": "string"
+                            }, {
+                                "name": "_departmentName",
+                                "type": "string"
+                            }, {
+                                "name": "_courseName",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "addStudentToCourse",
+                        "outputs": [],
+                        "payable": false,
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    }, {
+                        "constant": true,
+                        "inputs": [
+                            {
+                                "name": "_uniID",
+                                "type": "uint256"
+                            }, {
+                                "name": "_semID",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "getSemesterById",
+                        "outputs": [
+                            {
+                                "name": "",
+                                "type": "string"
+                            }
+                        ],
+                        "payable": false,
+                        "stateMutability": "view",
+                        "type": "function"
+                    }, {
+                        "constant": false,
+                        "inputs": [
+                            {
+                                "name": "_uniName",
+                                "type": "string"
+                            }, {
+                                "name": "_semesterName",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "addSemester",
+                        "outputs": [],
+                        "payable": false,
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    }, {
+                        "constant": true,
+                        "inputs": [
+                            {
+                                "name": "uniId",
+                                "type": "uint256"
+                            }, {
+                                "name": "semID",
+                                "type": "uint256"
+                            }, {
+                                "name": "depID",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "getCourseNumber",
+                        "outputs": [
+                            {
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "payable": false,
+                        "stateMutability": "view",
+                        "type": "function"
+                    }, {
+                        "constant": false,
+                        "inputs": [
+                            {
+                                "name": "_uniName",
+                                "type": "string"
+                            }, {
+                                "name": "_semesterName",
+                                "type": "string"
+                            }, {
+                                "name": "_departmentName",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "addDepartment",
+                        "outputs": [],
+                        "payable": false,
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    }, {
+                        "constant": false,
+                        "inputs": [
+                            {
+                                "name": "_name",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "addUniversity",
+                        "outputs": [],
+                        "payable": false,
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    }, {
+                        "constant": true,
+                        "inputs": [
+                            {
+                                "name": "_uniName",
+                                "type": "string"
+                            }, {
+                                "name": "_semesterName",
+                                "type": "string"
+                            }, {
+                                "name": "_departmentName",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "getDepartment",
+                        "outputs": [
+                            {
+                                "name": "",
+                                "type": "string"
+                            }
+                        ],
+                        "payable": false,
+                        "stateMutability": "view",
+                        "type": "function"
+                    }, {
+                        "constant": true,
+                        "inputs": [
+                            {
+                                "name": "_uniName",
+                                "type": "string"
+                            }, {
+                                "name": "_semesterName",
+                                "type": "string"
+                            }, {
+                                "name": "_departmentName",
+                                "type": "string"
+                            }, {
+                                "name": "_courseName",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "getSyllabusHash",
+                        "outputs": [
+                            {
+                                "name": "",
+                                "type": "string"
+                            }
+                        ],
+                        "payable": false,
+                        "stateMutability": "view",
+                        "type": "function"
+                    }, {
+                        "constant": true,
+                        "inputs": [],
+                        "name": "getUniNumber",
+                        "outputs": [
+                            {
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "payable": false,
+                        "stateMutability": "view",
+                        "type": "function"
+                    }, {
+                        "constant": true,
+                        "inputs": [
+                            {
+                                "name": "uniId",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "getSemesterNumber",
+                        "outputs": [
+                            {
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "payable": false,
+                        "stateMutability": "view",
+                        "type": "function"
+                    }, {
+                        "constant": true,
+                        "inputs": [
+                            {
+                                "name": "uniId",
+                                "type": "uint256"
+                            }, {
+                                "name": "semId",
+                                "type": "uint256"
+                            }, {
+                                "name": "depId",
+                                "type": "uint256"
+                            }, {
+                                "name": "courseId",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "getHash",
+                        "outputs": [
+                            {
+                                "name": "",
+                                "type": "string"
+                            }
+                        ],
+                        "payable": false,
+                        "stateMutability": "view",
+                        "type": "function"
+                    }, {
+                        "constant": true,
+                        "inputs": [
+                            {
+                                "name": "_uniID",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "getUniversityById",
+                        "outputs": [
+                            {
+                                "name": "",
+                                "type": "string"
+                            }
+                        ],
+                        "payable": false,
+                        "stateMutability": "view",
+                        "type": "function"
+                    }, {
+                        "constant": false,
+                        "inputs": [
+                            {
+                                "name": "_student",
+                                "type": "address"
+                            }, {
+                                "name": "_uniName",
+                                "type": "string"
+                            }, {
+                                "name": "_semesterName",
+                                "type": "string"
+                            }, {
+                                "name": "_departmentName",
+                                "type": "string"
+                            }, {
+                                "name": "_courseName",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "verifyThatStudentGraduatedFromCourse",
+                        "outputs": [],
+                        "payable": false,
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    }, {
+                        "constant": true,
+                        "inputs": [
+                            {
+                                "name": "uniId",
+                                "type": "uint256"
+                            }, {
+                                "name": "semID",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "getDepartmentNumber",
+                        "outputs": [
+                            {
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "payable": false,
+                        "stateMutability": "view",
+                        "type": "function"
+                    }, {
+                        "constant": true,
+                        "inputs": [
+                            {
+                                "name": "_uniName",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "getUniversity",
+                        "outputs": [
+                            {
+                                "name": "",
+                                "type": "string"
+                            }
+                        ],
+                        "payable": false,
+                        "stateMutability": "view",
+                        "type": "function"
+                    }, {
+                        "constant": true,
+                        "inputs": [
+                            {
+                                "name": "_uniID",
+                                "type": "uint256"
+                            }, {
+                                "name": "_semID",
+                                "type": "uint256"
+                            }, {
+                                "name": "_depID",
+                                "type": "uint256"
+                            }, {
+                                "name": "_courseID",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "getCourseById",
+                        "outputs": [
+                            {
+                                "name": "",
+                                "type": "string"
+                            }
+                        ],
+                        "payable": false,
+                        "stateMutability": "view",
+                        "type": "function"
+                    }, {
+                        "constant": false,
+                        "inputs": [
+                            {
+                                "name": "_uniName",
+                                "type": "string"
+                            }, {
+                                "name": "_semesterName",
+                                "type": "string"
+                            }, {
+                                "name": "_departmentName",
+                                "type": "string"
+                            }, {
+                                "name": "_courseName",
+                                "type": "string"
+                            }, {
+                                "name": "_hash",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "addCourse",
+                        "outputs": [],
+                        "payable": false,
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    }
+                ]);
 
-</script>
+            var contract = SyllabiContract.at('0x741bbe59244e808a0e8a8fd7687a6275be2feb10');
 
+            console.log(contract);
 
-    
+            function add_option(select_id, text) {
+                var select = document.getElementById(select_id);
+                select.options[select.options.length] = new Option(text);
+            }
 
-</body>
+            function clear_options(select_id) {
+                var select = document.getElementById(select_id);
+                select.options.length = 0;
+            }
+
+            contract.getUniNumber(function (error, result) {
+                if (!error) {
+
+                    for (var i = 0; i < result; i++) {
+                        contract.getUniversityById(i, function (error2, result2) {
+                            if (!error2) {
+                                add_option("sel_universities", result2);
+
+                            } else {
+
+                                console.log(error2);
+
+                            }
+                        });
+                    }
+
+                } else {
+                    console.log(error);
+
+                }
+            });
+
+            document
+                .getElementById('sel_universities')
+                .onclick = sel_universities_onchange;
+
+            function sel_universities_onchange() {
+                var sel_universities = document.getElementById("sel_universities");
+                clear_options("sel_semesters");
+                clear_options("sel_departments");
+                contract.getSemesterNumber(
+                    sel_universities.selectedIndex,
+                    function (error, result) {
+                        if (!error) {
+                            for (var i = 0; i < result; i++) {
+                                contract.getSemesterById(
+                                    sel_universities.selectedIndex,
+                                    i,
+                                    function (error2, result2) {
+                                        if (!error2) {
+
+                                            add_option("sel_semesters", result2);
+
+                                        } else {
+
+                                            console.log(error2);
+
+                                        }
+                                    }
+                                );
+
+                            }
+
+                        } else {
+                            console.log(error);
+
+                        }
+                    }
+                );
+
+            }
+
+            document
+                .getElementById('sel_semesters')
+                .onclick = sel_semesters_onchange;
+
+            function sel_semesters_onchange() {
+                var sel_universities = document.getElementById("sel_universities");
+                var sel_semesters = document.getElementById("sel_semesters");
+                clear_options("sel_departments");
+                contract.getDepartmentNumber(
+                    sel_universities.selectedIndex,
+                    sel_semesters.selectedIndex,
+                    function (error, result) {
+                        if (!error) {
+                            for (var i = 0; i < result; i++) {
+                                contract.getDepartmentById(
+                                    sel_universities.selectedIndex,
+                                    sel_semesters.selectedIndex,
+                                    i,
+                                    function (error2, result2) {
+                                        if (!error2) {
+
+                                            add_option("sel_departments", result2);
+
+                                        } else {
+
+                                            console.log(error2);
+
+                                        }
+                                    }
+                                );
+
+                            }
+
+                        } else {
+                            console.log(error);
+
+                        }
+                    }
+                );
+
+            }
+
+            document
+                .getElementById('sel_departments')
+                .onclick = sel_departments_onchange;
+
+            function sel_departments_onchange() {
+                var sel_universities = document.getElementById("sel_universities");
+                var sel_semesters = document.getElementById("sel_semesters");
+                var sel_departments = document.getElementById("sel_departments");
+
+                clear_options("sel_courses");
+                contract.getCourseNumber(
+                    sel_universities.selectedIndex,
+                    sel_semesters.selectedIndex,
+                    sel_departments.selectedIndex,
+                    function (error, result) {
+                        if (!error) {
+                            for (var i = 0; i < result; i++) {
+                                contract.getCourseById(
+                                    sel_universities.selectedIndex,
+                                    sel_semesters.selectedIndex,
+                                    sel_departments.selectedIndex,
+                                    i,
+                                    function (error2, result2) {
+                                        if (!error2) {
+
+                                            add_option("sel_courses", result2);
+
+                                        } else {
+
+                                            console.log(error2);
+
+                                        }
+                                    }
+                                );
+
+                            }
+
+                        } else {
+                            console.log(error);
+                        }
+                    }
+                );
+
+            }
+
+            console.log(contract);
+
+            $('#button').click(function () {
+                var sel_universities = document.getElementById("sel_universities");
+                var sel_semesters = document.getElementById("sel_semesters");
+                var sel_departments = document.getElementById("sel_departments");
+                var sel_courses = document.getElementById("sel_courses");
+
+                contract.getHash(
+                    sel_universities.selectedIndex,
+                    sel_semesters.selectedIndex,
+                    sel_departments.selectedIndex,
+                    sel_courses.selectedIndex,
+                    function (error, result) {
+                        if (!error) {
+                            //$("#showsyllabus").html("Hash is : " + result);
+                            showPdf(result);
+                        }
+                    }
+                );
+
+            });
+
+            function showPdf(hash) {
+                console.log(hash);
+                var win = window.open("http://localhost:8080/ipfs/" + hash, '_blank');
+                win.focus();
+            }
+        </script>
+
+    </body>
 </html>
