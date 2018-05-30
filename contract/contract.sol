@@ -9,10 +9,10 @@ contract Syllabi {
     Course courseGlobal;
     mapping(string => uint) uniNameToId;
     mapping(string => bool) uniExists;
-    uint uniNumber = 0 ;
 
     struct University {
         string name;
+        uint semesterNumber ;
         Semester[] semesters;
         mapping(string => bool) semesterExists;
         mapping(string => uint) semesterNameToId;
@@ -46,13 +46,6 @@ contract Syllabi {
         Department storage department = semester.departments[semester.departmentNameToId[_departmentName]];
         department.courses[department.courseNameToId[_courseName]].students.push(_student);
     }
-
-    function addInstructorToCourse(address _instructor,string _uniName, string _semesterName, string _departmentName, string _courseName) external{
-        University storage uni = universities[uniNameToId[_uniName]];
-        Semester storage semester = uni.semesters[uni.semesterNameToId[_semesterName]];
-        Department storage department = semester.departments[semester.departmentNameToId[_departmentName]];
-        department.courses[department.courseNameToId[_courseName]].instructor = _instructor;
-    }
     
     function verifyThatStudentGraduatedFromCourse(address _student,string _uniName, string _semesterName, string _departmentName, string _courseName) external{
         University storage uni = universities[uniNameToId[_uniName]];
@@ -65,11 +58,10 @@ contract Syllabi {
 
     function addUniversity(string _name) external {
         if(!uniExists[_name]){
-            uniGlobal.name = _name;
-            uint id = universities.push(uniGlobal);
-            uniNameToId[_name] = id - 1;
-            uniNumber++;
-            uniExists[_name] = true;
+        uniGlobal.name = _name;
+        uint id = universities.push(uniGlobal);
+        uniNameToId[_name] = id - 1;
+        uniExists[_name] = true;
         }
     }
     
@@ -93,7 +85,8 @@ contract Syllabi {
             departmentGlobal.name = _departmentName;
             uint id = uni.semesters[uni.semesterNameToId[_semesterName]].departments.push(departmentGlobal);
             uni.semesters[uni.semesterNameToId[_semesterName]].departmentNameToId[_departmentName] = id - 1;
-            semester.departmentExists[_departmentName] = true;  
+            semester.departmentExists[_departmentName] = true;
+            
         }
             
     }
@@ -119,8 +112,32 @@ contract Syllabi {
         return universities[_uniID].name;
     }
     
+    function getSemesterById(uint _uniID,uint _semID) external view returns (string){
+        return universities[_uniID].semesters[_semID].name;
+    }
+    
+    function getDepartmentById(uint _uniID,uint _semID,uint _depID) external view returns (string){
+        return universities[_uniID].semesters[_semID].departments[_depID].name;
+    }
+    
+    function getCourseById(uint _uniID,uint _semID,uint _depID,uint _courseID) external view returns (string){
+        return universities[_uniID].semesters[_semID].departments[_depID].courses[_courseID].name;
+    }
+    
     function getUniNumber() external view returns (uint){
-        return uniNumber;
+        return universities.length;
+    }
+    
+    function getSemesterNumber(uint uniId) external view returns (uint){
+        return universities[uniId].semesters.length;
+    }
+    
+    function getDepartmentNumber(uint uniId,uint semID) external view returns (uint){
+        return universities[uniId].semesters[semID].departments.length;
+    }
+    
+    function getCourseNumber(uint uniId, uint semID, uint depID) external view returns (uint){
+        return universities[uniId].semesters[semID].departments[depID].courses.length;
     }
     
     function getDepartment(string _uniName, string _semesterName, string _departmentName) external view returns(string){
@@ -135,5 +152,12 @@ contract Syllabi {
         Semester storage semester = uni.semesters[uni.semesterNameToId[_semesterName]];
         Department storage department = semester.departments[semester.departmentNameToId[_departmentName]];
         return department.courses[department.courseNameToId[_courseName]].syllabusHash;
+    }
+    
+    function getHash(uint uniId, uint semId, uint depId, uint courseId) external view returns (string) {
+        University storage uni = universities[uniId];
+        Semester storage semester = uni.semesters[semId];
+        Department storage department = semester.departments[depId];
+        return department.courses[courseId].syllabusHash;
     }
 }

@@ -268,7 +268,7 @@ var SyllabiContract = web3.eth.contract([
 ]);
 
 
-var contract = SyllabiContract.at('0xd9e26e5a531594d6c951d9c21019357f2d7869a0');
+var contract = SyllabiContract.at('0x741bbe59244e808a0e8a8fd7687a6275be2feb10');
 
 console.log(contract);
 console.log(web3.eth.accounts[0])
