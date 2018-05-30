@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+node_modules/
+
 # C extensions
 *.so
 
@@ -90,6 +92,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+bin/
+pip-selfcheck.json
+pyvenv.cfg
 
 # Spyder project settings
 .spyderproject
@@ -111,5 +116,5 @@ venv.bak/
 *.DS_Store
 
 crawler/course_fetcher/spiders/output.txt
-ipfs/syllabi/
+syllabi/*.pdf
 .vscode/

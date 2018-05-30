@@ -10,7 +10,7 @@ class CourseFetchSpider(scrapy.Spider):
     semester = ''
 
     def __init__(self, semester='', **kwargs):
-        super().__init__(**kwargs)  # python3
+        # super().__init__(**kwargs)  # python3
         self.semester = semester
 
     def parse(self, response):

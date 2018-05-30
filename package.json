@@ -1,0 +1,22 @@
+{
+  "name": "syl",
+  "version": "1.0.0",
+  "description": "- Please create a wiki page for the parts that you work on and try to explain the purpose and implementation",
+  "main": "contractUploader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mehmetsefa2644/SyllabusArchive.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mehmetsefa2644/SyllabusArchive/issues"
+  },
+  "homepage": "https://github.com/mehmetsefa2644/SyllabusArchive#readme",
+  "dependencies": {
+    "ethereumjs-testrpc": "^6.0.3"
+  }
+}
