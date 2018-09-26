@@ -21,4 +21,6 @@ You should add the semester as an argument
 
 ```scrapy runspider course_fetch.py -a semester='2017-2018-2'```
 
+--------------------
+
 Please see [project explanation](https://www.youtube.com/watch?v=oEylZAW2Zts).
